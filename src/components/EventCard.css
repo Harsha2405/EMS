@@ -1,0 +1,97 @@
+.event-card {
+  background-color: var(--color-bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.event-card-booked {
+  border: 1px solid var(--color-primary);
+}
+
+.event-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.event-card-badge {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.event-card-body {
+  padding: 20px 24px;
+  flex: 1;
+}
+
+.event-card-description {
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.event-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-card-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+}
+
+.event-card-icon {
+  color: var(--color-accent);
+}
+
+.event-card-footer {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .event-card-header {
+    padding: 16px 20px;
+  }
+  
+  .event-card-body {
+    padding: 16px 20px;
+  }
+  
+  .event-card-footer {
+    padding: 12px 20px;
+  }
+}
