@@ -42,6 +42,20 @@ const SignupPage = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    const url = "http://localhost:8056/api/users/signup";
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    };
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
     
     if (!validateForm()) {
       return

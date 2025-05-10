@@ -26,21 +26,25 @@ const LoginPage = () => {
     e.preventDefault()
     setIsLoading(true)
     setError('')
+    const url = "http://localhost:8056/api/users/signin";
     
-    try {
-      const user = await login(formData.email, formData.password)
-      
-      // Redirect based on role
-      if (user.role === 'admin') {
-        navigate('/admin')
-      } else {
-        navigate('/user')
-      }
-    } catch (err) {
-      setError(err.message)
-    } finally {
-      setIsLoading(false)
+    const promise = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+
+    const data = await promise.text()
+    console.log(data)
+
+    if(data === "Login successful!") {
+      navigate('/user')
+    }else {
+      setError(data)
     }
+    
   }
   
   // Demo account login handlers

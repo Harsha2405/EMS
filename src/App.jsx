@@ -49,9 +49,8 @@ function App() {
             <Route 
               path="/user/*" 
               element={
-                <ProtectedRoute requiredRole="user">
+
                   <UserDashboard />
-                </ProtectedRoute>
               } 
             />
             <Route path="/not-found" element={<NotFound />} />
